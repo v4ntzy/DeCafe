@@ -45,28 +45,29 @@
                         <div class="gentle-glow"></div>
                     </div>
                 </div>
-                <h1 class="comfort-title">Welcome back</h1>
-                <p class="gentle-subtitle">Sign in to your peaceful space</p>
+                <h1 class="comfort-title">Selamat Datang</h1>
+                <p class="gentle-subtitle">Silakan daftar untuk melanjutkan</p>
             </div>
             
-            <form class="comfort-form" id="loginForm" novalidate>
+            <form class="comfort-form" id="registerForm" novalidate>
                 <div class="soft-field">
                     <div class="field-container">
-                        <input type="username" id="username" name="username" required autocomplete="username">
-                        <label for="username">username</label>
+                        <input type="text" id="username" name="username" required autocomplete="username">
+                        <label for="username">Username</label>
                         <div class="field-accent"></div>
                     </div>
                     <span class="gentle-error" id="usernameError"></span>
                 </div>
-                
-            <div class="soft-field">
-                <div class="field-container">
-                    <input type="text" id="email" name="email" required autocomplete="email">
-                    <label for="email">Email</label>
-                    <div class="field-accent"></div>
+
+                <div class="soft-field">
+                    <div class="field-container">
+                        <input type="email" id="email" name="email" required autocomplete="email">
+                        <label for="email">Email</label>
+                        <div class="field-accent"></div>
+                    </div>
+                    <span class="gentle-error" id="emailError"></span>
                 </div>
-                <span class="gentle-error" id="emailError"></span>
-            </div>
+                
                 <div class="soft-field">
                     <div class="field-container">
                         <input type="password" id="password" name="password" required autocomplete="current-password">
@@ -96,14 +97,14 @@
                                 <path d="M1 5l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </span>
-                        <span class="checkbox-text">Remember me</span>
+                        <span class="checkbox-text">Ingatkan Saya</span>
                     </label>
-                    <a href="#" class="comfort-link">Forgot password?</a>
+                    <a href="#" class="comfort-link">Lupa Kata Sandi?</a>
                 </div>
 
                 <button type="submit" class="comfort-button">
                     <div class="button-background"></div>
-                    <span class="button-text">Sign in</span>
+                    <span class="button-text">Sign Up</span>
                     <div class="button-loader">
                         <div class="gentle-spinner">
                             <div class="spinner-circle"></div>
@@ -111,11 +112,13 @@
                     </div>
                     <div class="button-glow"></div>
                 </button>
+
+                <div id="alertBox" class="alert" style="display:none;"></div>
             </form>
 
             <div class="gentle-divider">
                 <div class="divider-line"></div>
-                <span class="divider-text">or continue with</span>
+                <span class="divider-text">atau Melanjutkan dengan</span>
                 <div class="divider-line"></div>
             </div>
 
@@ -143,8 +146,8 @@
             </div>
 
             <div class="comfort-signup">
-                <span class="signup-text">Don't have an account?</span>
-                <a href="index.html" class="comfort-link signup-link">Sign up</a>
+                <span class="signup-text">Sudah Mempunyai Akun?</span>
+                <a href="index.html" class="comfort-link signup-link">Sign In</a>
             </div>
 
             <div class="gentle-success" id="successMessage">
@@ -160,15 +163,42 @@
                         </svg>
                     </div>
                 </div>
-                <h3 class="success-title">Welcome!</h3>
-                <p class="success-desc">Taking you to your dashboard...</p>
+                <h3 class="success-title">Berhasil!</h3>
+                <p class="success-desc">Redirecting to your dashboard...</p>
             </div>
         </div>
     </div>
 
     <script src="../../shared/js/form-utils.js"></script>
     <script src="script.js"></script>
-    <p id="message"></p>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('registerForm');
+            const successMsg = document.getElementById('successMessage');
+            const formContent = document.querySelector('.comfort-form');
+            const formHeader = document.querySelector('.comfort-header');
+            const formDivider = document.querySelector('.gentle-divider');
+            const formSocial = document.querySelector('.comfort-social');
+            const formSignup = document.querySelector('.comfort-signup');
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                formContent.style.display = 'none';
+                formHeader.style.display = 'none';
+                formDivider.style.display = 'none';
+                formSocial.style.display = 'none';
+                formSignup.style.display = 'none';
+                successMsg.style.display = 'flex';
+
+                setTimeout(function() {
+                    window.location.href = "index.html";
+                }, 2000);
+            });
+        });
+    </script>
+    
     <script src="js/register.js" defer></script>
 </body>
 </html>
