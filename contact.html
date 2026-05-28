@@ -145,40 +145,7 @@ http://www.templatemo.com/tm-466-cafe-house
    <script>
       /* Google map
       ------------------------------------------------*/
-      var map = '';
-      var center;
-
-      function initialize() {
-        var mapOptions = {
-          zoom: 16,
-          center: new google.maps.LatLng(13.758468,100.567481),
-          scrollwheel: false
-        };
-        
-        map = new google.maps.Map(document.getElementById('google-map'),  mapOptions);
-
-        google.maps.event.addDomListener(map, 'idle', function() {
-          calculateCenter();
-        });
-        
-        google.maps.event.addDomListener(window, 'resize', function() {
-          map.setCenter(center);
-        });
-      }
-
-      function calculateCenter() {
-        center = map.getCenter();
-      }
-
-      function loadGoogleMap(){
-        var script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' + 'callback=initialize';
-        document.body.appendChild(script);
-      }
-      $(document).ready(function(){                
-        loadGoogleMap();                
-      });
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.8996319272687!2d110.39281007500517!3d-7.80044999221977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a57669d43fe55%3A0x75fae1bb400d4da5!2sSMA%20Negeri%208%20Yogyakarta!5e0!3m2!1sid!2sid!4v1779980945774!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </script>
     </body>
     </html>
