@@ -5,14 +5,36 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cafe House - Food and Drink Menu</title>
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,700' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Damion' rel='stylesheet' type='text/css'>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/templatemo-style.css" rel="stylesheet">
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
 
-  </head>
+  <style>
+    /* 1. Mengubah teks deskripsi produk menjadi rata kiri dan memberikan ruang bernapas */
+    .tm-product-description {
+      text-align: left !important;
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+
+    /* 2. Merapikan posisi dan tampilan lingkaran harga */
+    .tm-product-price {
+      right: 15px !important; /* Memberikan jarak aman dari tepi kanan */
+      top: 50% !important;
+      transform: translateY(-50%); /* Memastikan posisi vertikal selalu pas di tengah */
+    }
+
+    /* 3. Merapikan teks di menu samping (Sidebar) agar tidak terlalu rapat */
+    .tm-side-menu ul li a {
+      text-transform: capitalize !important; /* Mengubah ALL CAPS menjadi Kapital di awal kata */
+      letter-spacing: 1px;
+      padding: 12px 20px !important; /* Memberikan ruang klik yang lebih lega */
+    }
+  </style>
+</head>
 <body>
   <div id="loader-wrapper">
     <div id="loader"></div>
@@ -201,7 +223,7 @@
             <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante.</p>
             <div class="tm-social-icons-container">
               <a href="#" class="tm-social-icon"><i class="fa fa-facebook"></i></a>
-              <a href="#" class="tm-social-icon"><i class="fa fa-twitter"></i></a>
+              <a href="#" class="fa fa-twitter tm-social-icon"></a>
               <a href="#" class="tm-social-icon"><i class="fa fa-linkedin"></i></a>
               <a href="#" class="tm-social-icon"><i class="fa fa-youtube"></i></a>
               <a href="#" class="tm-social-icon"><i class="fa fa-behance"></i></a>
@@ -209,11 +231,11 @@
           </div>
         </div>          
       </div>  
-    </div>      
+    </div>    
     <div>
       <div class="container">
         <div class="row tm-copyright">
-          <p class="col-lg-12 small copyright-text text-center">Copyright &copy; 2084 Your Cafe House</p>
+          <p class="col-lg-12 small copyright-text text-center">Copyright &copy; 2026 Kopi Delayota</p>
         </div>  
       </div>
     </div>
